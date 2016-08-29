@@ -97,7 +97,13 @@
         <h3>helpers</h3>
             <a href="{{URL::to('helpers/timezones/UTC')}}" target="_blank">timezones Helpers</a>
 
-            Gravatar: <a href="{{URL::to('unhelpers/gravatar')}}"><img src="{{Auth::user()->gravatar}}"></a>
+            Gravatar: 
+
+            @if(Auth::check())
+            <a href="{{URL::to('unhelpers/gravatar')}}"><img src="{{Auth::user()->gravatar}}"></a>
+            @else
+            login, pls.
+            @endif
        </div>
        <div class="">
         <h3>attitudes</h3>

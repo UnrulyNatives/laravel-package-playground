@@ -38,7 +38,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="">Original published: </div>
+                <div class="">Original published2: </div>
                 <div class="title"> {{ $current_time }}</div>
                     
                 @if(Auth::check())
