@@ -6,6 +6,9 @@ namespace Laraveldaily\Timezones;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as Controller;
 use Carbon\Carbon;
+// use Auth;
+use Illuminate\Support\Facades\Auth;
+
 
 class TimezonesController extends Controller
 {
@@ -18,6 +21,8 @@ class TimezonesController extends Controller
             : Carbon::now();
         // return view('originaltimezones::time', compact('current_time'));
         // return view('laraveldaily/timezones/time', compact('current_time'));
+        // dd(Auth::check());
+
         return view('laraveldaily\timezones::time', compact('current_time'));
     }
 
