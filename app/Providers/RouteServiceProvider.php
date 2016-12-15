@@ -36,7 +36,7 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         $this->mapWebRoutes();
-
+        $this->mapUnstarterRoutes();
         $this->mapApiRoutes();
 
         //
@@ -76,4 +76,17 @@ class RouteServiceProvider extends ServiceProvider
             require base_path('routes/api.php');
         });
     }
+
+    protected function mapUnstarterRoutes()
+    {
+        Route::group([
+            'middleware' => 'web',
+            'namespace' => $this->namespace,
+        ], function ($router) {
+            require base_path('unstarter/routes/unstarter.php');
+        });
+    }
+
+
+
 }

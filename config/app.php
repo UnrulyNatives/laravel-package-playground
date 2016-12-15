@@ -120,7 +120,7 @@ return [
     |
     */
 
-    'log' => env('APP_LOG', 'single'),
+    'log' => env('APP_LOG', 'daily'),
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
@@ -178,6 +178,93 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+
+
+
+
+        // a scaffolding package https://github.com/laralib/l5scaffold
+        // "Laralib\L5scaffold\GeneratorsServiceProvider",
+        Amranidev\ScaffoldInterface\ScaffoldInterfaceServiceProvider::class,
+
+        Amranidev\Ajaxis\AjaxisServiceProvider::class,
+
+        Arcanedev\LogViewer\LogViewerServiceProvider::class,
+
+        Arcanedev\NoCaptcha\NoCaptchaServiceProvider::class,
+
+        Arrilot\Widgets\ServiceProvider::class,
+
+        Barryvdh\Debugbar\ServiceProvider::class,
+
+        ClassyGeeks\Potion\PotionServiceProvider::class,
+
+        Cmgmyr\Messenger\MessengerServiceProvider::class,
+
+        Collective\Html\HtmlServiceProvider::class,
+
+        \Conner\Likeable\LikeableServiceProvider::class,
+
+        // package for tags
+        // https://github.com/rtconner/laravel-tagging
+        \Conner\Tagging\Providers\TaggingServiceProvider::class,
+
+
+
+        // package for slugs - search-engine-friendly descriptive urls
+        // https://github.com/cviebrock/eloquent-sluggable
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
+
+        // Theme package. In this app it is used for switching between CSS framework.
+        // https://github.com/igaster/laravel-theme
+        igaster\laravelTheme\themeServiceProvider::class,
+
+        Intervention\Image\ImageServiceProvider::class,
+
+        Jenssegers\Agent\AgentServiceProvider::class,
+
+        Jenssegers\Date\DateServiceProvider::class,
+
+        // https://github.com/laravel/socialite
+        Laravel\Socialite\SocialiteServiceProvider::class,
+
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
+
+        // package for comments
+        // https://github.com/thyagobrejao/laravel-commentable
+        ThyagoBrejao\Commentable\ServiceProvider::class,
+
+        // package for tracking user's activity see `starter/admintools` for all tools
+        Spatie\Activitylog\ActivitylogServiceProvider::class,
+
+        Spatie\Backup\BackupServiceProvider::class,
+
+        Spatie\LinkChecker\LinkCheckerServiceProvider::class,
+
+        Spatie\Permission\PermissionServiceProvider::class,
+
+        // Spatie\ResponseCache\ResponseCacheServiceProvider::class,
+
+        // https://github.com/spatie/geocoder
+        Spatie\Geocoder\GeocoderServiceProvider::class,
+
+        // https://github.com/spatie/laravel-url-signer
+        Spatie\UrlSigner\Laravel\UrlSignerServiceProvider::class,
+
+        // https://github.com/spatie/laravel-analytics
+        Spatie\Analytics\AnalyticsServiceProvider::class,
+
+
+        // translations manager
+        Barryvdh\TranslationManager\ManagerServiceProvider::class,
+
+        
+        // protects against dumb passwords "unicodeveloper/laravel-password": "1.0.*"
+        Unicodeveloper\DumbPassword\DumbPasswordServiceProvider::class,
+
+
+
+
+
         // Unrulynatives packages for developing tests
         Unrulynatives\Attitudes\AttitudesServiceProvider::class,
         Unrulynatives\Helpers\HelpersServiceProvider::class,
@@ -230,6 +317,47 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        // here start classes for extra packages
+        // sorted alphabetically
+
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+
+        // // https://github.com/laravie/html/tree/5.3
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+        'Input'     => Illuminate\Support\Facades\Input::class,
+        // https://github.com/igaster/laravel-theme
+        'Theme' => igaster\laravelTheme\Facades\Theme::class,
+        'Agent' => Jenssegers\Agent\Facades\Agent::class,
+        'Activity' => Spatie\Activitylog\ActivitylogFacade::class,
+        'Theme' => igaster\laravelTheme\Facades\Theme::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+        'Date' => Jenssegers\Date\Date::class,
+        'Activity' => Spatie\Activitylog\Models\Activity::class,
+
+        'Geocoder' => Spatie\Geocoder\GeocoderFacade::class,
+        'UrlSigner' => Spatie\UrlSigner\Laravel\UrlSignerFacade::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Analytics' => Spatie\Analytics\AnalyticsFacade::class,
+        'ResponseCache' => Spatie\ResponseCache\ResponseCacheFacade::class,
+        'Captcha' => Arcanedev\NoCaptcha\Facades\NoCaptcha::class,
+        'Widget'       => Arrilot\Widgets\Facade::class,
+        'AsyncWidget'  => Arrilot\Widgets\AsyncFacade::class,
+
+        // custom-made helpers
+        'dateHelper'=> App\Helpers\DateHelper::class,
+        'avatarHelper'=> App\Helpers\AvatarHelper::class,
+        // 'countNondistinct'=> App\Helpers\DistinctHelper::class,
+        'sitewideHelper'=> App\Helpers\SitewideHelper::class,
+        'avatarHelper'=> App\Helpers\AvatarHelper::class,
+        'standpointHelper'=> App\Helpers\StandpointHelper::class,
+        'isActive'=> App\Helpers\ActiveIfRequest::class,
+
+
+
+
 
     ],
 

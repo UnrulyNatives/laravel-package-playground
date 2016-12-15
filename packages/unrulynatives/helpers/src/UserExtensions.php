@@ -42,7 +42,7 @@ trait UserExtensions
      */
     // protected $hidden = ['password', 'remember_token'];
 
-    public static function boot()
+    public static function bootUserExtensions()
     {
         parent::boot();
 
@@ -53,6 +53,7 @@ trait UserExtensions
         $hash = md5(strtolower(trim($this->attributes['email'])));
         return "http://www.gravatar.com/avatar/$hash";
     }
+
 
 
 }

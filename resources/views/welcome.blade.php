@@ -108,6 +108,7 @@
        <div class="">
         <h3>attitudes</h3>
             <a href="{{URL::to('helpers/timezones/UTC')}}" target="_blank">timezones attitudes</a>
+            <a href="{{URL::to('attitudes-docs')}}" target="_blank">Attitudes docs</a>
            
        </div>
        <div class="">
